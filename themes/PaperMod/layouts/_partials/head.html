@@ -85,15 +85,19 @@
 {{- end -}}
 
 {{- /* Favicons */}}
-<link rel="icon" href="{{ site.Params.assets.favicon | default "/favicon.ico" | absURL }}">
-<link rel="icon" type="image/svg+xml" href="{{ site.Params.assets.favicon_svg | default "/favicon.svg" | absURL }}">
-<link rel="icon" type="image/png" sizes="96x96" href="{{ site.Params.assets.favicon96 | default "/favicon-96x96.png" | absURL }}">
-<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "/apple-touch-icon.png" | absURL }}">
-<link rel="mask-icon" href="{{ site.Params.assets.safari_pinned_tab | default "/favicon.svg" | absURL }}" color="#2e2e33">
-<link rel="manifest" href="{{ site.Params.assets.manifest | default "/site.webmanifest" | absURL }}">
-<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
-<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#2e2e33" }}">
+{{- /* 1. El favicon clásico .ico como fallback definitivo para navegadores antiguos (como IE) y herramientas que buscan la raíz */}}
+<link rel="icon" href="{{ site.Params.assets.favicon | default "/favicon.ico" | absURL }}" sizes="32x32">
 
+{{- /* 2. El favicon moderno en SVG (escalable y con soporte para modo oscuro/claro si tu SVG lo incluye) */}}
+<link rel="icon" type="image/svg+xml" href="{{ site.Params.assets.favicon_svg | default "/favicon.svg" | absURL }}">
+
+{{- /* 3. Apple Touch Icon para dispositivos iOS (Safari ignora el manifest y busca esto) */}}
+<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "/apple-touch-icon.png" | absURL }}">
+
+{{- /* 4. Web Manifest para Android / Chrome (aquí dentro es donde se configuran los iconos de 192 y 512 que tienes) */}}
+<link rel="manifest" href="{{ site.Params.assets.manifest | default "/site.webmanifest" | absURL }}">
+
+<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
 {{- /* RSS */}}
 {{ range .AlternativeOutputFormats -}}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}" title="{{ .Name }}">
