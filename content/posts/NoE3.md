@@ -2,6 +2,11 @@
 title: Mi selección del "NoE3"
 date: 2026-06-10
 draft: false
+cover:
+  image: "../media/NoE3/genATLAS_KeyArt_001.webp"
+  alt: "gen Atlas"
+  caption: "gen Atlas"
+  relative: true
 ---
 
 Durante lo que va de junio han tenido lugar una serie de eventos relacionados con el mundo de los videojuegos, mundo el cual, como podréis ver en las próximas entradas de este blog, es una de mis pasiones.
