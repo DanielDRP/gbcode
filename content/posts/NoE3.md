@@ -3,7 +3,7 @@ title: Mi selección del "NoE3"
 date: 2026-06-10
 draft: false
 cover:
-  image: "media/NoE3/genATLAS_KeyArt_001.webp"
+  image: "media/NoE3/NoE3.webp"
   alt: "gen Atlas"
   caption: "gen Atlas"
   relative: true
