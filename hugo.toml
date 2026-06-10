@@ -1,4 +1,10 @@
-baseURL = 'https://danieldrp.github.io/gbcode/'
-locale = 'es-es'
-title = 'gbcode'
-theme = 'PaperMod'
+baseURL = "https://danieldrp.github.io/gbcode/"
+languageCode = "en-us"
+title = "gbcode"
+theme = "PaperMod"
+
+[params.assets]
+favicon = "/favicon.ico"
+favicon16x16 = "/favicon-16x16.png"
+favicon32x32 = "/favicon-32x32.png"
+apple_touch_icon = "/apple-touch-icon.png"
