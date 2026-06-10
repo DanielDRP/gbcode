@@ -85,19 +85,16 @@
 {{- end -}}
 
 {{- /* Favicons */}}
-{{- /* 1. El favicon clásico .ico como fallback definitivo para navegadores antiguos (como IE) y herramientas que buscan la raíz */}}
-<link rel="icon" href="{{ site.Params.assets.favicon | default "/favicon.ico" | absURL }}" sizes="32x32">
+<link rel="icon" href="{{ site.Params.assets.favicon | default "favicon.ico" | relURL }}" sizes="32x32">
 
-{{- /* 2. El favicon moderno en SVG (escalable y con soporte para modo oscuro/claro si tu SVG lo incluye) */}}
-<link rel="icon" type="image/svg+xml" href="{{ site.Params.assets.favicon_svg | default "/favicon.svg" | absURL }}">
+<link rel="icon" type="image/svg+xml" href="{{ site.Params.assets.favicon_svg | default "favicon.svg" | relURL }}">
 
-{{- /* 3. Apple Touch Icon para dispositivos iOS (Safari ignora el manifest y busca esto) */}}
-<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "/apple-touch-icon.png" | absURL }}">
+<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "apple-touch-icon.png" | relURL }}">
 
-{{- /* 4. Web Manifest para Android / Chrome (aquí dentro es donde se configuran los iconos de 192 y 512 que tienes) */}}
-<link rel="manifest" href="{{ site.Params.assets.manifest | default "/site.webmanifest" | absURL }}">
+<link rel="manifest" href="{{ site.Params.assets.manifest | default "site.webmanifest" | relURL }}">
 
 <meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
+
 {{- /* RSS */}}
 {{ range .AlternativeOutputFormats -}}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}" title="{{ .Name }}">
