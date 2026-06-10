@@ -85,13 +85,10 @@
 {{- end -}}
 
 {{- /* Favicons */}}
-<link rel="icon" href="{{ site.Params.assets.favicon | default "favicon.ico" | relURL }}" sizes="32x32">
-
-<link rel="icon" type="image/svg+xml" href="{{ site.Params.assets.favicon_svg | default "favicon.svg" | relURL }}">
-
-<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "apple-touch-icon.png" | relURL }}">
-
-<link rel="manifest" href="{{ site.Params.assets.manifest | default "site.webmanifest" | relURL }}">
+<link rel="icon" href="/gbcode/favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="/gbcode/favicon-96x96.png">
+<link rel="apple-touch-icon" href="/gbcode/apple-touch-icon.png">
+<link rel="manifest" href="/gbcode/site.webmanifest">
 
 <meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
 
